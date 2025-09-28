@@ -39,7 +39,7 @@ def get_valid_score():
 
 
 def determine_grade(score):
-    """Determine grade by score (0-100)."""
+    """Determine grade by score."""
     if score >= 90:
         return "Excellent"
     elif score >= 50:
@@ -49,7 +49,7 @@ def determine_grade(score):
 
 
 def print_stars(score):
-    """Print as many stars as the score (rounded down to an integer)."""
+    """Print as many stars as the score."""
     print('*' * int(score))
 
 
