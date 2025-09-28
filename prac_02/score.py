@@ -9,6 +9,9 @@ import random
 def main():
     score = float(input("Enter score: "))
     print(f"Your grade: {determine_grade(score)}")
+    random_score = random.randint(0, 100)
+    print(f"Random score: {random_score}")
+    print(f"Grade by ramdom score: {determine_grade(random_score)}")
 
 
 def determine_grade(score):
