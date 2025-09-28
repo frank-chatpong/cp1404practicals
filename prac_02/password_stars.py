@@ -1,3 +1,8 @@
+"""
+CP1404/CP5632 - Practical
+Program to get password and print stars
+"""
+
 MINIMUM_LENGTH = 10
 
 
