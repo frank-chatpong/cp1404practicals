@@ -7,6 +7,7 @@ import random
 
 
 def main():
+    """Determine score status program"""
     score = float(input("Enter score: "))
     print(f"Your grade: {determine_grade(score)}")
     random_score = random.randint(0, 100)
@@ -15,6 +16,7 @@ def main():
 
 
 def determine_grade(score):
+    """Determine grade by score"""
     if score < 0 or score > 100:
         return "Invalid score"
     elif score >= 90:
