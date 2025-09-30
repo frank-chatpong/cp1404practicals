@@ -12,12 +12,12 @@ def main():
     print_stars(password)
 
 
-def get_password(min_length):
+def get_password(minimum_length):
     """Get password that meets the required minimum length"""
-    password = input(f"Please enter the password (at least {min_length} characters): ")
-    while len(password) < min_length:
+    password = input(f"Please enter the password (at least {minimum_length} characters): ")
+    while len(password) < minimum_length:
         print("Error: Password too short!")
-        password = input(f"Please enter the password (at least {min_length} characters): ")
+        password = input(f"Please enter the password (at least {minimum_length} characters): ")
     return password
 
 
