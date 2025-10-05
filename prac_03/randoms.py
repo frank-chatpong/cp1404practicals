@@ -18,4 +18,5 @@ Answer the questions about random
 # ANS : The smallest number that I can see is 2.6209650846534696 and the largest is 5.471547885591382
 
 import random
+"""Print a random number between 1 and 100 inclusive"""
 print(random.randint(1, 100))
