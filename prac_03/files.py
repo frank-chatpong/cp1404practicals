@@ -31,9 +31,22 @@ print(f"Hi {name}!")
 
 """Open file and calculate by using first 2 lines"""
 with open("numbers.txt", 'r') as in_file:
-    # Read the first two lines
     number1 = int(in_file.readline())
     number2 = int(in_file.readline())
 
 print(number1 + number2)
+
+# 4. Now write a fourth block of code that prints the total for all lines in numbers.txt.
+# This should work for a file with any number of numbers.
+# Use with instead of open and close for this question.
+"""Open file and calculate by sum all lines"""
+total = 0
+
+with open("numbers.txt", 'r') as in_file:
+    for line in in_file:
+        number = int(line)
+        total += number
+
+print(total)
+
 
