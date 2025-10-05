@@ -25,3 +25,15 @@ name = in_file.read().strip()
 in_file.close()
 
 print(f"Hi {name}!")
+
+# 3. Write code that opens numbers.txt, reads only the first two numbers,
+# adds them together then prints the result, which should be... 59.
+
+"""Open file and calculate by using first 2 lines"""
+with open("numbers.txt", 'r') as in_file:
+    # Read the first two lines
+    number1 = int(in_file.readline())
+    number2 = int(in_file.readline())
+
+print(number1 + number2)
+
