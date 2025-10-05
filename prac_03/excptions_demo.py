@@ -16,3 +16,15 @@ except ValueError:
 except ZeroDivisionError:
     print("Cannot divide by zero!")
 print("Finished.")
+
+"""
+Questions
+
+1. When will a ValueError occur?
+ANS : The ValueError occur when the input is not int.
+2. When will a ZeroDivisionError occur?
+ANS : The ZeroDivisionError occur when the user try to divide by zero.
+3. Could you change the code to avoid the possibility of a ZeroDivisionError?
+ANS : yes 
+
+"""
