@@ -9,7 +9,7 @@ Answer the following questions:
 try:
     numerator = int(input("Enter the numerator: "))
     denominator = int(input("Enter the denominator: "))
-    if denominator == 0:
+    if denominator == 0:  # checks for invalid input (0)
         print("Cannot divide by zero!")
     else:
         fraction = numerator / denominator
