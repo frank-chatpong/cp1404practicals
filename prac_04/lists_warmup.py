@@ -1,3 +1,8 @@
+"""
+CP1404/CP5632 Practical
+Warm-up for practical 04
+"""
+
 numbers = [3, 1, 4, 1, 5, 9, 2]
 
 """
