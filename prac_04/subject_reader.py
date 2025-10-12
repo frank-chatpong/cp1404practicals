@@ -8,7 +8,7 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = load_data(FILENAME)
-    print(data)
+    display_subject(data)
 
 
 def load_data(filename=FILENAME):
@@ -18,12 +18,18 @@ def load_data(filename=FILENAME):
     data = []
     input_file = open(filename)
     for line in input_file:
-        line = line.strip()              # Remove the \n
-        parts = line.split(',')          # Separate the data into its parts
-        parts[2] = int(parts[2])         # Make the number an integer (ignore PyCharm's warning)
-        data.append(parts)               # Add this list to the data list
-    input_file.close()                   # Close the file
+        line = line.strip()  # Remove the \n
+        parts = line.split(',')  # Separate the data into its parts
+        parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
+        data.append(parts)  # Add this list to the data list
+    input_file.close()  # Close the file
     return data
+
+
+def display_subject(data):
+    """Display subject, lecturer, and student count from the data list."""
+    for subject, lecturer, number_of_students in data:
+        print(f"{subject} is taught by {lecturer} and has {number_of_students} students")
 
 
 main()
