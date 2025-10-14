@@ -29,8 +29,8 @@ def load_subjects(filename=FILENAME):
 
 def display_subjects(subject_data):
     """Display subject, lecturer, and number_of_students from the subject data list."""
-    for subject, lecturer, number_of_students in subject_data:
-        print(f"{subject} is taught by {lecturer} and has {number_of_students} students")
+    for subject in subject_data:
+        print(f"{subject[0]} is taught by {subject[1]:12} and has {subject[2]:3} students")
 
 
 main()
