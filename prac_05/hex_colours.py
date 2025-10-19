@@ -8,5 +8,12 @@ COLOR_TO_CODES = {"ALICEBLUE": "#f0f8ff", "ANTIQUEWHITE": "#faebd7", "AQUA": "#0
                   "HOTPINK": "#ff69b4"}
 print(COLOR_TO_CODES)
 
+colour_name = input("Enter colour name: ").upper()
+while colour_name != "":
+    try:
+        print(COLOR_TO_CODES[colour_name])
+    except KeyError:
+        print("Invalid colour name")
+    colour_name = input("Enter colour name: ").upper()
 
 
