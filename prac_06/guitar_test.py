@@ -18,3 +18,6 @@ def main():
 
     print(f"{gibson.name} is_vintage() - Expected True. Got {gibson.is_vintage()}")
     print(f"{another.name} is_vintage() - Expected False. Got {another.is_vintage()}")
+
+
+main()
