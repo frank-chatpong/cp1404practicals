@@ -1,7 +1,7 @@
 """
 CP1404/CP5632 Practical - Guitar program.
 Estimate: 30 minutes
-Actual:    minutes
+Actual:  30  minutes
 """
 CURRENT_YEAR = 2025
 

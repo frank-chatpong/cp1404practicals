@@ -1,7 +1,7 @@
 """
 CP1404/CP5632 Practical - Guitar test program.
 Estimate: 30 minutes
-Actual:    minutes
+Actual: 30   minutes
 """
 
 from guitar import Guitar
