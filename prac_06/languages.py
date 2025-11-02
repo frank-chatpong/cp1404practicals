@@ -1,6 +1,7 @@
 """
-Estimate: 20 minutes
-Actual:    minutes
+CP1404/CP5632 Practical -Languages program.
+Estimate: 15 minutes
+Actual: 15   minutes
 """
 
 from programming_language import ProgrammingLanguage
