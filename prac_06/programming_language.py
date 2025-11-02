@@ -4,6 +4,7 @@ Estimate: 20 minutes
 Actual:    minutes
 """
 
+
 class ProgrammingLanguage:
     """Represent information about a programming language."""
 
@@ -20,7 +21,7 @@ class ProgrammingLanguage:
         self.reflection = reflection
         self.year = year
 
-
-
-
+    def is_dynamic(self):
+        """Determine if language is dynamic typed."""
+        return self.typing.upper() == "DYNAMIC"
 
