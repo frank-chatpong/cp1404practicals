@@ -109,5 +109,16 @@ def save_projects(filename, project_list):
         for current_project in completed_projects:
             print(f"  {current_project.display_line()}")
 
+    def filter_projects_by_date(project_list):
+        """Show projects starting after a specific date."""
+        date_text = input("Show projects that start after date (dd/mm/yy): ")
+        filter_date = convert_to_date(date_text)
+        filtered_projects = sorted(
+            [project for project in project_list if project.start_date >= filter_date],
+            key=lambda project: project.start_date
+        )
+        for current_project in filtered_projects:
+            print(current_project.display_line())
+
 
 
