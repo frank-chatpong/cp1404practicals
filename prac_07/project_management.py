@@ -106,14 +106,12 @@ def create_project_from_row(row):
     start_date = convert_to_date(start_text)
     if start_date == "":
         return ""
-
     try:
         priority = int(priority_text)
         cost_estimate = float(cost_text)
         completion_percentage = int(percentage_text)
     except ValueError:
         return ""
-
     return Project(name, start_date, priority, cost_estimate, completion_percentage)
 
 
@@ -122,13 +120,11 @@ def load_projects(filename):
     input_file = open(filename, "r")
     input_file.readline()  # ข้าม header
     project_list = []
-
     for line in input_file:
         if line.strip():
             project_object = create_project_from_row(line)
             if project_object != "":
                 project_list.append(project_object)
-
     input_file.close()
     return project_list
 
@@ -147,18 +143,13 @@ def save_projects(filename, project_list):
             f"{project.completion_percentage}",
             file=output_file
         )
-
     output_file.close()
 
 
 def display_projects(project_list):
     """Display incomplete and completed projects."""
-    incomplete_projects = sorted(
-        [project for project in project_list if not project.is_complete()]
-    )
-    completed_projects = sorted(
-        [project for project in project_list if project.is_complete()]
-    )
+    incomplete_projects = sorted([project for project in project_list if not project.is_complete()])
+    completed_projects = sorted([project for project in project_list if project.is_complete()])
 
     print("Incomplete projects:")
     for current_project in incomplete_projects:
@@ -176,10 +167,9 @@ def filter_projects_by_date(project_list):
     if filter_date == "":
         return
 
-    filtered_projects = sorted(
-        [project for project in project_list if project.start_date >= filter_date],
-        key=lambda project: project.start_date
-    )
+    filtered_projects = [project for project in project_list if project.start_date >= filter_date]
+    filtered_projects.sort()
+
     for current_project in filtered_projects:
         print(current_project.display_line())
 
