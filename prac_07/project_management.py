@@ -5,7 +5,7 @@ Main program for managing a list of projects.
 """
 
 import datetime
-from project import Project
+from project import Project, DATE_FORMAT
 
 PROJECT_FILE = "projects.txt"
 FIELD_SEPARATOR = "\t"
@@ -20,6 +20,7 @@ MENU = (
     "- (Q)uit\n"
     ">>> "
 )
+
 
 def main():
     print("Welcome to Pythonic Project Management")
@@ -36,14 +37,60 @@ def convert_to_date(date_text)
     print(f"Invalid date format: {date_text} (use dd/mm/yy or dd/mm/yyyy)")
     return None
 
+
+def create_project_from_row(row):
+    """Convert one line of text into a Project object."""
+    parts = row.strip().split(FIELD_SEPARATOR)
+    if len(parts) != 5:
+        return ""
+
+    name, start_text, priority_text, cost_text, percentage_text = parts
+    start_date = convert_to_date(start_text)
+    if start_date == "":
+        return ""
+
+    try:
+        priority = int(priority_text)
+        cost_estimate = float(cost_text)
+        completion_percentage = int(percentage_text)
+    except ValueError:
+        return ""
+
+    return Project(name, start_date, priority, cost_estimate, completion_percentage)
+
+
 def load_projects(filename):
-    """Load projects from file and return a new list."""
-    projects = []
-    with open(filename, "r") as in_file:
-        in_file.readline()
-        for line in in_file:
-            if line.strip():
-                project = create_project_from_row(line)
-                if project is not None:
-                    projects.append(project)
-    return projects
+    """Load projects from file and return a list of Project objects."""
+    input_file = open(filename, "r")
+    input_file.readline()  # ข้าม header
+    project_list = []
+
+    for line in input_file:
+        if line.strip():
+            project_object = create_project_from_row(line)
+            if project_object != "":
+                project_list.append(project_object)
+
+    input_file.close()
+    return project_list
+
+
+def save_projects(filename, project_list):
+    """Save all projects to a file."""
+    output_file = open(filename, "w")
+    print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=output_file)
+
+    for project in project_list:
+        print(
+            f"{project.name}\t"
+            f"{project.start_date.strftime(DATE_FORMAT)}\t"
+            f"{project.priority}\t"
+            f"{project.cost_estimate:.1f}\t"
+            f"{project.completion_percentage}",
+            file=output_file
+        )
+
+    output_file.close()
+
+
+
