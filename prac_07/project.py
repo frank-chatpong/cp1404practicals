@@ -8,7 +8,7 @@ Actual:    minutes
 import datetime
 
 DATE_FORMAT = "%d/%m/%Y"
-FIELD_SEPERATOR = "\t"
+
 
 class Project:
     """Represent a project entry."""
@@ -37,6 +37,3 @@ class Project:
         return (f"{self.name}, start: {self.start_date.strftime(DATE_FORMAT)}, "
                 f"priority {self.priority}, estimate: ${self.cost_estimate:,.2f}, "
                 f"completion: {self.completion_percentage}%")
-
-
-
