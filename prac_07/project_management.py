@@ -23,7 +23,72 @@ MENU = (
 
 
 def main():
+    """Main program to load, display, add, update, and save projects."""
     print("Welcome to Pythonic Project Management")
+
+    # โหลดไฟล์เริ่มต้น
+    try:
+        project_list = load_projects(PROJECT_FILE)
+        print(f"Loaded {len(project_list)} projects from {PROJECT_FILE}")
+    except FileNotFoundError:
+        print(f"Could not find {PROJECT_FILE}. Starting with an empty project list.")
+        project_list = []
+
+    # แสดงเมนูครั้งแรก
+    display_menu()
+    user_choice = input(">>> ").lower()
+
+    while user_choice != "q":
+        if user_choice == "l":
+            filename = input("Enter filename to load: ")
+            try:
+                project_list = load_projects(filename)
+                print(f"Loaded {len(project_list)} projects from {filename}")
+            except FileNotFoundError:
+                print("File not found.")
+
+        elif user_choice == "s":
+            filename = input("Enter filename to save: ")
+            save_projects(filename, project_list)
+            print(f"Saved {len(project_list)} projects to {filename}")
+
+        elif user_choice == "d":
+            display_projects(project_list)
+
+        elif user_choice == "f":
+            filter_projects_by_date(project_list)
+
+        elif user_choice == "a":
+            add_new_project(project_list)
+
+        elif user_choice == "u":
+            update_project(project_list)
+
+        else:
+            print("Invalid choice, please try again.")
+
+        display_menu()
+        user_choice = input(">>> ").lower()
+
+    save_answer = input(f"Would you like to save to {PROJECT_FILE}? (y/n): ").lower()
+    if save_answer == "y":
+        save_projects(PROJECT_FILE, project_list)
+        print(f"Projects saved to {PROJECT_FILE}")
+    print("Thank you for using custom-built project management software.")
+
+
+def display_menu():
+    """Show available menu options."""
+    print(
+        "- (L)oad projects\n"
+        "- (S)ave projects\n"
+        "- (D)isplay projects\n"
+        "- (F)ilter projects by date\n"
+        "- (A)dd new project\n"
+        "- (U)pdate project\n"
+        "- (Q)uit"
+    )
+
 
 
 def convert_to_date(date_text)
