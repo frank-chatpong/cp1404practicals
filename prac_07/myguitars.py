@@ -10,6 +10,16 @@ import csv
 def main():
     """Read CSV file and display guitars sorted by year."""
     guitars = load_guitars("guitars.csv")
+    print("All guitar")
+    for guitar in guitars:
+        print(guitar)
+
+    guitars.sort()
+
+    print("\nSorted Guitars (oldest to newest):")
+    for guitar in guitars:
+        vintage_label = " (vintage)" if guitar.is_vintage() else ""
+        print(f"{guitar}{vintage_label}")
 
 
 def load_guitars(filename):
@@ -24,3 +34,4 @@ def load_guitars(filename):
         guitars.append(Guitar(name, year, cost))
     in_file.close()
     return guitars
+main()
