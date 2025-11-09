@@ -28,5 +28,15 @@ class Project:
         """Check if project is completed."""
         return self.completion_percentage >= 100
 
+    def starts_after(self, from_date):
+        """Check if project starts after given date."""
+        return self.start_date > from_date
+
+    def display_line(self):
+        """Determine readable project string."""
+        return (f"{self.name}, start: {self.start_date.strftime(DATE_FORMAT)}, "
+                f"priority {self.priority}, estimate: ${self.cost_estimate:,.2f}, "
+                f"completion: {self.completion_percentage}%")
+
 
 
