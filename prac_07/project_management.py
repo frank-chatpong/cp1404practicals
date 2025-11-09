@@ -166,6 +166,7 @@ def display_projects(project_list):
     for current_project in completed_projects:
         print(f"  {current_project.display_line()}")
 
+
 def filter_projects_by_date(project_list):
     """Show projects starting on/after a specific date."""
     date_text = input("Show projects that start after date (dd/mm/yy): ")
@@ -226,3 +227,6 @@ def update_project(project_list):
             selected_project.priority = int(new_priority_text)
     else:
         print("Invalid project number.")
+
+
+main()
