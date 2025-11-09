@@ -2,7 +2,7 @@
 CP1404/CP5632 Practical
 Project program
 Estimate: 60 minutes
-Actual:   3 hours
+Actual:   4 hours
 """
 
 import datetime
