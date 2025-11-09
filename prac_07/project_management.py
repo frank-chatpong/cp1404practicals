@@ -135,5 +135,25 @@ def save_projects(filename, project_list):
         new_project = Project(project_name, start_date, project_priority, project_cost, project_completion)
         project_list.append(new_project)
 
+    def update_project(project_list):
+        """Update percentage and/or priority of a selected project."""
+        for i, current_project in enumerate(project_list):
+            print(f"{i} {current_project.display_line()}")
+
+        selected_index = int(input("Project choice: "))
+        if 0 <= selected_index < len(project_list):
+            selected_project = project_list[selected_index]
+            print(selected_project.display_line())
+
+            new_completion_text = input("New Percentage: ")
+            if new_completion_text != "":
+                selected_project.completion_percentage = int(new_completion_text)
+
+            new_priority_text = input("New Priority: ")
+            if new_priority_text != "":
+                selected_project.priority = int(new_priority_text)
+        else:
+            print("Invalid project number.")
+
 
 
