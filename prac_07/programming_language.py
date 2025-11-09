@@ -15,9 +15,10 @@ class ProgrammingLanguage:
         self.pointer_arithmetic = pointer_arithmetic
         self.year = year
 
-    def __repr__(self):
+    def __str__(self):
         """Return string representation of a ProgrammingLanguage."""
-        return f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}"
+        return f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, " \
+               f"Pointer Arithmetic={self.pointer_arithmetic}, First appeared in {self.year}"
 
     def is_dynamic(self):
         """Determine if language is dynamically typed."""
