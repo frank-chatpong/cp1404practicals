@@ -120,5 +120,20 @@ def save_projects(filename, project_list):
         for current_project in filtered_projects:
             print(current_project.display_line())
 
+    def add_new_project(project_list):
+        """Add a new project to the list."""
+        print("Let's add a new project")
+        project_name = input("Name: ")
+        date_text = input("Start date (dd/mm/yy): ")
+        start_date = convert_to_date(date_text)
+        project_priority = int(input("Priority: "))
+        cost_text = input("Cost estimate: $").replace("$", "")
+        project_cost = float(cost_text)
+        completion_text = input("Percent complete: ")
+        project_completion = int(completion_text)
+
+        new_project = Project(project_name, start_date, project_priority, project_cost, project_completion)
+        project_list.append(new_project)
+
 
 
