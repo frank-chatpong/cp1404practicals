@@ -35,5 +35,5 @@ class Project:
     def display_line(self):
         """Determine readable project string."""
         return (f"{self.name}, start: {self.start_date.strftime(DATE_FORMAT)}, "
-                f"priority {self.priority}, estimate: ${self.cost_estimate:,.2f}, "
+                f"priority {self.priority}, estimate: ${self.cost_estimate:.2f}, "
                 f"completion: {self.completion_percentage}%")

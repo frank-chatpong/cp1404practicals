@@ -64,7 +64,7 @@ def main():
         display_menu()
         user_choice = input(">>> ").lower()
 
-    save_answer = input(f"Would you like to save to {PROJECT_FILE}? (y/n): ").lower()
+    save_answer = input(f"Would you like to save to {PROJECT_FILE}? ").lower()
     if save_answer == "y":
         save_projects(PROJECT_FILE, project_list)
         print(f"Projects saved to {PROJECT_FILE}")
@@ -118,7 +118,7 @@ def create_project_from_row(row):
 def load_projects(filename):
     """Load projects from file and return a list of Project objects."""
     input_file = open(filename, "r")
-    input_file.readline()  # ข้าม header
+    input_file.readline()
     project_list = []
     for line in input_file:
         if line.strip():
