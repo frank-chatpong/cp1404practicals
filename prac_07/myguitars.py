@@ -34,4 +34,6 @@ def load_guitars(filename):
         guitars.append(Guitar(name, year, cost))
     in_file.close()
     return guitars
+
+
 main()
