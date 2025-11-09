@@ -82,7 +82,7 @@ def display_menu():
     )
 
 
-def convert_to_date(date_text)
+def convert_to_date(date_text):
     """Convert a string like 'dd/mm/yyyy' or 'dd/mm/yy' into a date object."""
     date_text = date_text.strip()
     for i in ("%d/%m/%Y", "%d/%m/%y"):
@@ -91,7 +91,7 @@ def convert_to_date(date_text)
         except ValueError:
             print(end="")
     print(f"Invalid date format: {date_text} (use dd/mm/yy or dd/mm/yyyy)")
-    return None
+    return ""
 
 
 def create_project_from_row(row):
@@ -167,9 +167,12 @@ def display_projects(project_list):
         print(f"  {current_project.display_line()}")
 
 def filter_projects_by_date(project_list):
-    """Show projects starting after a specific date."""
+    """Show projects starting on/after a specific date."""
     date_text = input("Show projects that start after date (dd/mm/yy): ")
     filter_date = convert_to_date(date_text)
+    if filter_date == "":
+        return
+
     filtered_projects = sorted(
         [project for project in project_list if project.start_date >= filter_date],
         key=lambda project: project.start_date
@@ -177,12 +180,17 @@ def filter_projects_by_date(project_list):
     for current_project in filtered_projects:
         print(current_project.display_line())
 
+
 def add_new_project(project_list):
     """Add a new project to the list."""
     print("Let's add a new project")
     project_name = input("Name: ")
     date_text = input("Start date (dd/mm/yy): ")
     start_date = convert_to_date(date_text)
+    if start_date == "":
+        print("Cannot add project: invalid start date.")
+        return
+
     project_priority = int(input("Priority: "))
     cost_text = input("Cost estimate: $").replace("$", "")
     project_cost = float(cost_text)
@@ -192,12 +200,19 @@ def add_new_project(project_list):
     new_project = Project(project_name, start_date, project_priority, project_cost, project_completion)
     project_list.append(new_project)
 
+
 def update_project(project_list):
     """Update percentage and/or priority of a selected project."""
     for i, current_project in enumerate(project_list):
         print(f"{i} {current_project.display_line()}")
 
-    selected_index = int(input("Project choice: "))
+    selected_index_text = input("Project choice: ")
+    try:
+        selected_index = int(selected_index_text)
+    except ValueError:
+        print("Invalid project number.")
+        return
+
     if 0 <= selected_index < len(project_list):
         selected_project = project_list[selected_index]
         print(selected_project.display_line())
