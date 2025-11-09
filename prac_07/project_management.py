@@ -2,6 +2,8 @@
 CP1404/CP5632 Practical
 project management program
 Main program for managing a list of projects.
+Estimate: 60 minutes
+Actual:   3 hours
 """
 
 import datetime
