@@ -8,7 +8,7 @@ import csv
 
 
 def main():
-    """Read CSV file and display guitars sorted by year."""
+    """Read CSV file, add new guitar and display guitars sorted by year."""
     guitars = load_guitars("guitars.csv")
     print("All guitar")
     for guitar in guitars:
@@ -23,6 +23,9 @@ def main():
         vintage_label = " (vintage)" if guitar.is_vintage() else ""
         print(f"{guitar}{vintage_label}")
 
+    save_guitars("guitars.csv", guitars)
+    print("\nGuitars have been saved to guitars.csv")
+
 
 def load_guitars(filename):
     """Load guitars from CSV file and return list of Guitar objects."""
@@ -36,6 +39,7 @@ def load_guitars(filename):
         guitars.append(Guitar(name, year, cost))
     in_file.close()
     return guitars
+
 
 def add_new_guitars(guitars):
     """Ask user to add new guitar to the list."""
@@ -52,6 +56,14 @@ def add_new_guitars(guitars):
             guitars.append(guitar)
             print(f"{guitar} added.")
         name = input("Name: ").strip()
+
+
+def save_guitars(filename, guitars):
+    """Save guitars to a CSV file."""
+    out_file = open(filename, "w")
+    for guitar in guitars:
+        out_file.write(f"{guitar.name},{guitar.year},{guitar.cost:.2f}\n")
+    out_file.close()
 
 
 main()
