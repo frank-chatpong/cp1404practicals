@@ -92,5 +92,22 @@ def save_projects(filename, project_list):
 
     output_file.close()
 
+    def display_projects(project_list):
+        """Display incomplete and completed projects."""
+        incomplete_projects = sorted(
+            [project for project in project_list if not project.is_complete()]
+        )
+        completed_projects = sorted(
+            [project for project in project_list if project.is_complete()]
+        )
+
+        print("Incomplete projects:")
+        for current_project in incomplete_projects:
+            print(f"  {current_project.display_line()}")
+
+        print("Completed projects:")
+        for current_project in completed_projects:
+            print(f"  {current_project.display_line()}")
+
 
 
