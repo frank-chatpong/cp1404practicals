@@ -24,3 +24,9 @@ class Project:
         """Allow sorting by priority (lower number = higher priority)."""
         return self.priority < other.priority
 
+    def is_complete(self):
+        """Check if project is completed."""
+        return self.completion_percentage >= 100
+
+
+
