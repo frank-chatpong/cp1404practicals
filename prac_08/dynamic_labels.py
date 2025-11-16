@@ -5,12 +5,11 @@ from kivy.uix.label import Label
 
 class DynamicLabelsApp(App):
     """Main program - Kivy app to demo dynamic labels creation."""
-    status_text = StringProperty()
 
     def __init__(self):
         """Construct main app."""
         super().__init__()
-        self.names = ["Chatpong", "Henry", "Frank", "James", "Edward"]
+        self.names = ["Chatpong", "Henry", "Frank", "James", "Edward", "Jack"]
 
     def build(self):
         """Build the Kivy app from the kv file."""
