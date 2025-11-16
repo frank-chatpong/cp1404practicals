@@ -28,5 +28,17 @@ class ConvertMilesToKmApp(App):
         except ValueError:
             pass
 
+    def handle_increment(self, value, change):
+        """Handle increment when press Up/Down."""
+        try:
+            miles = int(value) + change
+            self.root.ids.input_number.text = str(miles)
+            self.handle_calculate(str(miles))
+        except ValueError:
+            pass
+
+
+
+
 
 ConvertMilesToKmApp().run()
