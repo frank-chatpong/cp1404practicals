@@ -24,18 +24,20 @@ class ConvertMilesToKmApp(App):
         """Handle calculation (could be button press or other call)."""
         try:
             result = float(value) * CALCULATE_MILE_TO_KM
-            self.root.ids.output_label.text = str(result)
         except ValueError:
-            pass
+            result = 0
+
+        self.root.ids.output_label.text = str(result)
 
     def handle_increment(self, value, change):
         """Handle increment when press Up/Down."""
         try:
             miles = int(value) + change
-            self.root.ids.input_number.text = str(miles)
-            self.handle_calculate(str(miles))
         except ValueError:
-            pass
+            miles = change
+
+        self.root.ids.input_number.text = str(miles)
+        self.handle_calculate(str(miles))
 
 
 
