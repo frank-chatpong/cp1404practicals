@@ -18,3 +18,9 @@ class DynamicLabelsApp(App):
         self.create_labels()
         return self.root
 
+    def create_labels(self):
+        for name in self.names:
+            temp_label = Label(text=name)
+            self.root.ids.main.add_widget(temp_label)
+
+DynamicLabelsApp().run()
