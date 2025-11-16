@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.label import Label
 
+
 class DynamicLabelsApp(App):
     """Main program - Kivy app to demo dynamic labels creation."""
     status_text = StringProperty()
@@ -22,5 +23,6 @@ class DynamicLabelsApp(App):
         for name in self.names:
             temp_label = Label(text=name)
             self.root.ids.main.add_widget(temp_label)
+
 
 DynamicLabelsApp().run()
