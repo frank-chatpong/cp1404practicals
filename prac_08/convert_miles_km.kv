@@ -7,16 +7,18 @@ BoxLayout:
             text: '34'
             font_size: 48
             multiline: False
-        Button:
-            text: 'Square'
-            # the following line specifies the function in the app class to call when the button is pressed
-            on_press: app.handle_calculate(input_number.text)
+
         BoxLayout:
             orientation: 'vertical'
             Button:
                 text: 'Up'
             Button:
                 text: 'Down'
+    BoxLayout:
+        Button:
+            text: 'Convert miles to km'
+            # the following line specifies the function in the app class to call when the button is pressed
+            on_press: app.handle_calculate(input_number.text)
     BoxLayout:
         Label:
             id: output_label
