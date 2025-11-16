@@ -40,7 +40,4 @@ class ConvertMilesToKmApp(App):
         self.handle_calculate(str(miles))
 
 
-
-
-
 ConvertMilesToKmApp().run()
