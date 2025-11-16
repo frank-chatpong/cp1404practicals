@@ -7,7 +7,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
-CALCULATE_MILE_TO_KM = 1.609
+CALCULATE_MILE_TO_KM = 1.60934
 
 
 class ConvertMilesToKmApp(App):
