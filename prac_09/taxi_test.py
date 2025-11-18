@@ -14,19 +14,19 @@ def main():
     # my_taxi.drive(100)
     # print(my_taxi)
 
-    my_taxi = Taxi("Prius 1", 100, 1.23)
+    my_taxi = Taxi("Prius 1", 100)
     my_taxi.drive(40)
     print(my_taxi)
     print(
         f"{my_taxi.name} has fuel: {my_taxi.fuel} and driven: {my_taxi.current_fare_distance}km, "
-        f"the current fare: {my_taxi.get_fare()}")
+        f" the current fare: {my_taxi.get_fare()}")
 
     print("<<<Restart meter>>>")
     my_taxi.start_fare()
     my_taxi.drive(100)
     print(my_taxi)
     print(f"{my_taxi.name} has fuel: {my_taxi.fuel} and driven: {my_taxi.current_fare_distance}km,"
-          f"the current fare: {my_taxi.get_fare()}")
+          f" the current fare: {my_taxi.get_fare()}")
 
 
 main()
