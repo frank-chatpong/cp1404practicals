@@ -12,3 +12,10 @@ class SilverServiceTaxi(Taxi):
         self.fanciness = fanciness
         self.price_per_km *= fanciness
 
+    def get_fare(self):
+        """Get fare included flagfall."""
+        return super().get_fare() + self.flagfall
+
+
+
+
