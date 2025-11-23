@@ -4,8 +4,10 @@ CP1404/CP5632 Practical - unreliable car program.
 import random
 from car import Car
 
-class UnriliableCar:
+
+class UnreliableCar:
     """Represent a Car that only sometimes successfully drives."""
+
     def __init__(self, name, fuel, reliability):
         """Initialise a Car instance.
 
@@ -16,10 +18,9 @@ class UnriliableCar:
         self.reliability = reliability
 
     def drive(self, distance):
-        """Attempt to drive the car a given distance with random result."""
+        """Attempt to drive the car a given distance with reliability result."""
         random_number = random.randint(0, 100)
         if random_number < self.reliability:
-            return super().drive(distance)
+            distance_driven = super().drive(distance)
+            return distance_driven
         return 0
-
-
