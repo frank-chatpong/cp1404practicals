@@ -2,6 +2,7 @@
 
 from taxi import Taxi
 
+
 class SilverServiceTaxi(Taxi):
     """Represent a SilverServiceTaxi"""
     flagfall = 4.50
@@ -19,5 +20,3 @@ class SilverServiceTaxi(Taxi):
     def __str__(self):
         """Return string included flagfall."""
         return f"{super().__str__()} plus flagfall of ${self.flagfall:.2f}"
-
-
