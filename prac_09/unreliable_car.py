@@ -2,10 +2,10 @@
 CP1404/CP5632 Practical - unreliable car program.
 """
 import random
-from car import Car
+from prac_09.car import Car
 
 
-class UnreliableCar:
+class UnreliableCar(Car):
     """Represent a Car that only sometimes successfully drives."""
 
     def __init__(self, name, fuel, reliability):
