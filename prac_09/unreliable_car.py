@@ -15,5 +15,11 @@ class UnriliableCar:
         super().__init__(name, fuel)
         self.reliability = reliability
 
+    def drive(self, distance):
+        """Attempt to drive the car a given distance with random result."""
+        random_number = random.randint(0, 100)
+        if random_number < self.reliability:
+            return super().drive(distance)
+        return 0
 
 
