@@ -24,6 +24,7 @@ def is_long_word(word, length=5):
     """
     return len(word) >= length
 
+
 def format_as_sentence(phrase):
     """
     Format a phrase as a sentence, starting with a capital and ending with a single full stop.
@@ -43,13 +44,13 @@ def format_as_sentence(phrase):
         phrase += "."
     return phrase
 
+
 def run_tests():
     """Run the tests on the functions."""
     # assert test with no message - used to see if the function works properly
     assert repeat_string("Python", 1) == "Python"
     # the test below should fail
     assert repeat_string("hi", 2) == "hi hi"
-
 
     # assert test with custom message,
     # used to see if Car's init method sets the odometer correctly
@@ -67,13 +68,10 @@ def run_tests():
     assert car.fuel == 0
 
 
-
-
 run_tests()
 
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
 doctest.testmod()
-
 
 # TODO: 5. Write and test a function to format a phrase as a sentence,
 # starting with a capital and ending with a single full stop.
