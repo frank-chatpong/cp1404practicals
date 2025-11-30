@@ -23,6 +23,14 @@ def main():
         print()
         title = input("Enter page title: ").strip()
 
- 
+    print("Thank you.")
 
 
+def print_page_info(page):
+    """Print the title, summary, and URL of a Wikipedia page."""
+    print(page.title)
+    print(page.summary)
+    print(page.url)
+    
+
+main()
