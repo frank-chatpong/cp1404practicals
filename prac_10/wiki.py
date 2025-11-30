@@ -1,5 +1,6 @@
 """
-
+CP1404/CP5632 Practical : wiki.py
+Wikipedia page lookup with exception handling.
 """
 
 import wikipedia
