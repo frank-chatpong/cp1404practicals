@@ -31,6 +31,6 @@ def print_page_info(page):
     print(page.title)
     print(page.summary)
     print(page.url)
-    
+
 
 main()
